@@ -1,0 +1,12 @@
+#!name=面板合集
+#!desc=网络信息 + 节点测速 + ChatGPT检测
+
+[Panel]
+网络信息 𝕏 = script-name=网络信息·面板, update-interval=10
+NetSpeed = script-name=NetSpeed, update-interval=-1
+CFGPT = script-name=CFGPT, update-interval=-1
+
+[Script]
+网络信息·面板 = type=generic, timeout=14, script-update-interval=21600, script-path=https://raw.githubusercontent.com/ByteValley/NetTool/main/Scripts/Panel/network_info.js, argument=Update=10&Timeout=14&BUDGET=0&MASK_IP=1&MASK_POS=auto&IPv6=1&DOMESTIC_IPv4=ipip&DOMESTIC_IPv6=ddnspod&LANDING_IPv4=ipapi&LANDING_IPv6=ipsb&TW_FLAG_MODE=1&IconPreset=globe&Icon=globe.asia.australia&IconColor=#1E90FF&SUBTITLE_STYLE=line&SUBTITLE_MINIMAL=0&GAP_LINES=1&SD_STYLE=icon&SD_LANG=zh-Hans&SD_TIMEOUT=3&SD_CONCURRENCY=6&SD_REGION_MODE=full&SD_ICON_THEME=check&SD_ARROW=1&SD_SHOW_LAT=1&SD_SHOW_HTTP=1&LOG=1&LOG_LEVEL=info&LOG_TO_PANEL=0&LOG_PUSH=1
+NetSpeed = type=generic, script-path=https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/modules/Panel/Net_Speed/Net_Speed.js, argument=title=NetSpeed&iconfast=bolt&iconmid=hare&iconslow=tortoise&colorlow=#06D6A0&colormid=#FFD166&colorhigh=#EF476F&mb=3
+CFGPT = type=generic, timeout=6, script-path=https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/modules/Panel/CFGPT/CFGPT_2.js, argument=icon=lasso.and.sparkles&iconerr=xmark.seal.fill&icon-color=#336FA9&iconerr-color=#D65C51
