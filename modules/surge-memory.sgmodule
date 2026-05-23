@@ -1,0 +1,9 @@
+#!name=Surge 内存监控
+#!desc=显示 Surge Network Extension 当前内存占用，超限变色预警
+#!category=自用
+
+[Panel]
+SurgeMemory = script-name=SurgeMemory,update-interval=5
+
+[Script]
+SurgeMemory = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/07yixi/surge-rules/main/modules/surge-memory.js
