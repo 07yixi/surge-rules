@@ -1,8 +1,0 @@
-#!name=内存测试
-#!desc=test
-
-[Panel]
-MemTest = script-name=MemTest,update-interval=10
-
-[Script]
-MemTest = type=generic,timeout=5,script-path=data:,($done({title:"test",content:"ok"}))
