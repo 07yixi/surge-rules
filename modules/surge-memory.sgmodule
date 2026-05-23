@@ -1,5 +1,5 @@
 #!name=Surge 内存监控
-#!desc=显示 Surge Network Extension 当前内存占用，超限变色预警
+#!desc=显示 Surge Network Extension 当前内存占用
 #!category=自用
 
 [Panel]
