@@ -1,9 +1,8 @@
-#!name=Surge 内存监控
-#!desc=显示 Surge Network Extension 当前内存占用
-#!category=自用
+#!name=内存测试
+#!desc=test
 
 [Panel]
-SurgeMemory = script-name=SurgeMemory,update-interval=5
+MemTest = script-name=MemTest,update-interval=10
 
 [Script]
-SurgeMemory = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/07yixi/surge-rules/main/modules/surge-memory.js
+MemTest = type=generic,timeout=5,script-path=data:,($done({title:"test",content:"ok"}))
