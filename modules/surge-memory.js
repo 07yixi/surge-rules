@@ -1,25 +1,23 @@
 !(async () => {
   const mem = $surge.memoryUsage;
-  const mb = (mem / 1024 / 1024).toFixed(1);
-
   const traffic = await httpAPI("/v1/traffic", "GET");
   const uptime = timeTransform(Date.now(), Math.floor(traffic.startTime * 1000));
 
-  let icon = "memorychip";
-  let color = "#34C759"; // 绿色
-  if (mb >= 45) {
-    icon = "exclamationmark.triangle.fill";
-    color = "#FF3B30"; // 红色
-  } else if (mb >= 40) {
-    icon = "exclamationmark.triangle";
-    color = "#FF9500"; // 橙色
+  let content;
+  if (mem === undefined || mem === null) {
+    content = `内存：API不可用\n已运行：${uptime}`;
+  } else if (isNaN(mem)) {
+    content = `内存：NaN (raw=${mem})\n已运行：${uptime}`;
+  } else {
+    const mb = (mem / 1024 / 1024).toFixed(1);
+    content = `当前内存：${mb} MB\n已运行：${uptime}`;
   }
 
   $done({
     title: "Surge 内存占用",
-    content: `当前内存：${mb} MB\n已运行：${uptime}`,
-    icon: icon,
-    "icon-color": color,
+    content: content,
+    icon: "memorychip",
+    "icon-color": "#34C759",
   });
 })();
 
